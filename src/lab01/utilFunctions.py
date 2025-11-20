@@ -286,3 +286,28 @@ def adicionar_ruido(audio_signal, snr_db=-12):
     noise = np.random.normal(0, np.sqrt(noise_power), len(audio_signal))
     
     return audio_signal + noise
+
+
+def capturar_do_microfone(duracao_segundos):
+    """
+    Captura áudio do microfone
+    
+    Args:
+        duracao_segundos: Duração da captura
+    
+    Returns:
+        array: Áudio capturado
+    """
+    print(f"Iniciando captura por {duracao_segundos} segundos...")
+    print("Reproduza o áudio no seu celular AGORA!")
+    
+    # Captura áudio
+    audio_capturado = sd.rec(
+        int(duracao_segundos * SAMPLE_RATE), 
+        samplerate=SAMPLE_RATE, 
+        channels=1
+    )
+    sd.wait()  # Aguarda terminar a captura
+    
+    print("Captura concluída!")
+    return audio_capturado.flatten()
