@@ -20,3 +20,4 @@ FREQ_LOW = 440       # bit '0' (Lá)
 FREQ_HIGH = 880      # bit '1' (Lá oitava)
 
 
+#NÃO HOUVE MUITO O QUE FAZER AQUI :)
